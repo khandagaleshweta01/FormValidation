@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+
+    <title>Signup Form</title>
+    <script>
+
+        function validate() {
+            var mail = document.getElementById("text").value;
+            var reg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            var ph = document.getElementById("ph").value;
+            var rag = /^\+?\d{10,12}$/
+            var name = document.getElementById("name").value;
+            var regex = /^[A-Za-z]+(?: [A-Za-z]+)?$/
+            var name2 = document.getElementById("name2").value;
+
+            if (!reg.test(mail)) {
+                alert("Invalid mail")
+                return false;
+            }
+            if (!rag.test(ph)) {
+                alert("Invaild Mobile No")
+                return false;
+            }
+            if (!regex.test(name)) {
+                alert("Invalid first name")
+                return false;
+            }
+            if (!regex.test(name2)) {
+                alert("Inavalid last name")
+                return false;
+            }
+            else {
+                alert("valid from ")
+                return true;
+            }
+
+        }
+    </script>
+    <style>
+        table {
+            color: white;
+            background-color: rgb(68, 94, 223);
+            border-radius: 30px;
+        }
+
+        #btn {
+            background-color: red;
+            color: white;
+            height: 35px;
+            width: 100px;
+            border-radius: 25px;
+        }
+    </style>
+
+
+</head>
+
+<body background="bg.webp">
+    <br><br><br><br><br><br><br>
+    <table align="center" border="0" cellspacing="25">
+        <tr>
+            <td>First Name :
+            <td><input type="Text" id="name" placeholder="First Name">
+                <div id="first-name-err"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Last Name :
+            <td><input type="text" id="name2" placeholder="Last Name"></td>
+        </tr>
+
+        <tr>
+            <td>Email Address :
+            <td><input type="text" id="text" placeholder="Email">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Mobile Number :
+            <td><input type="text" id="ph" placeholder="Mobile Number">
+            </td>
+        </tr>
+        </td>
+        </tr>
+
+        <tr>
+            <td align="center" colspan="2">
+                <input type="submit" value="submit" id="btn" onclick="validate()">
+            </td>
+        </tr>
+
+
+
+</body>
+
+</html>
